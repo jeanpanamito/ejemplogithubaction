@@ -9,3 +9,20 @@ jobs:
         steps:
             - name: mostrar texto
               run: echo "Hola mundo"
+
+        build:
+            runs-on: windows-latest
+            needs: [inicio]
+                - name: texto
+                  run: echo "construir"
+
+        test:
+            runs-on: windows-latest
+            needs: [build]
+                - name: texto
+                  run: echo "test"    
+         deploy:
+            runs-on: windows-latest
+            needs: [test]
+                - name: texto
+                  run: echo "deploy"                
