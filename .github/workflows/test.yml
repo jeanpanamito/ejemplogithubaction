@@ -17,6 +17,12 @@ jobs: #importante seguir la identación pues indica que es un paso
         steps:
             - name: mostrar texto
               run: echo "Construir"
+            - name: Instalar PHP y COMPOSER
+              run: |
+                choco install php --version=8.1
+                choco install composer
+                php -v
+                composer --version  
 
     test:
         runs-on: windows-latest
