@@ -9,7 +9,8 @@ jobs: #importante seguir la identación pues indica que es un paso
         steps:
             - name: mostrar texto
               run: echo "Hola Mundo"
-                
+            - name: Instalar Checkout
+              uses: actions/checkout@v4    
     build:
         runs-on: windows-latest
         needs: [inicio]
