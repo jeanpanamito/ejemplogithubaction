@@ -25,7 +25,7 @@ jobs: #importante seguir la identación pues indica que es un paso
                 composer --version  
             - name: Instalar MySql
               run: |
-                choco install mysql --version=8.0.27 -y
+                choco install mysql -y
                 Start-Service mysql
                 mysql -u root -e "ALTER USER 'root'@'localhost' IDENTIFIED with mysql_native_password BY 'root';"mysql -u root -proot -e "CREATE DATABASE test;"
             - name: 📦 Instalar dependencias de Laravel Lumen
